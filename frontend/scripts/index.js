@@ -53,15 +53,23 @@ function displayAllUrls(urls) {
     console.error("Invalid or empty URL list.");
     return;
   }
+
   urls.forEach((url) => {
     const urlItem = document.createElement("div");
     urlItem.classList.add("urlItem");
 
+    const longUrlWrapper = document.createElement("div"); // Create a wrapper for the long URL
+    const longUrlLabel = document.createElement("span");
+    longUrlLabel.textContent = "Long URL: ";
+    longUrlWrapper.appendChild(longUrlLabel);
+
     const longUrlElement = document.createElement("a");
     longUrlElement.href = url.longUrl;
-    longUrlElement.textContent = `Long URL: ${url.longUrl}`;
+    longUrlElement.textContent = url.longUrl;
     longUrlElement.target = "_blank";
-    const space = document.createElement("br");
+
+    longUrlWrapper.appendChild(longUrlElement); // Append the long URL to the wrapper
+
     const shortUrlElement = document.createElement("a");
     shortUrlElement.href = `${baseUrl}/url/${url.shortUrl}`;
     shortUrlElement.textContent = `Short URL: ${baseUrl}/url/${url.shortUrl}`;
@@ -70,14 +78,9 @@ function displayAllUrls(urls) {
     const visitsElement = document.createElement("p");
     visitsElement.textContent = `Visits: ${url.visits}`;
 
-    urlItem.appendChild(longUrlElement);
-    urlItem.appendChild(space);
-
+    urlItem.appendChild(longUrlWrapper); // Append the wrapper with the long URL
     urlItem.appendChild(shortUrlElement);
-    urlItem.appendChild(space);
     urlItem.appendChild(visitsElement);
-    urlItem.appendChild(space);
-
     urlListBox.appendChild(urlItem);
   });
 }
