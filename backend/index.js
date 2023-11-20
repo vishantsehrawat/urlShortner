@@ -7,7 +7,7 @@ const { mongoConnection } = require("./database/mongodb.connection");
 const { userRouter } = require("./routes/user.routes");
 const { urlRouter } = require("./routes/url.routes");
 const { logger } = require("./middlewares/winstonLogger");
-app.use(cors());
+// app.use(cors());
 app.use(
   cors({
     origin: "http://127.0.0.1:5501", // Specify the allowed origin
