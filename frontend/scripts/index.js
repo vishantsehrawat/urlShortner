@@ -6,7 +6,7 @@ const totalClicks = document.getElementById("allClicks");
 const urlListBox = document.getElementById("urlListBox");
 let allurls = [];
 // const baseUrl = "http://localhost:8080"; // Your base URL
-const baseUrl = "https://urlshortenerbasic.vercel.app"; // Your base URL
+const baseUrl = "https://urlshortenerbasic1.onrender.com"; // Your base URL
 
 let userId = localStorage.getItem("urlShortenerUser") || "defaultUserID";
 
