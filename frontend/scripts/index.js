@@ -4,6 +4,10 @@ const fullUrlBtn = document.getElementById("fullUrlBtn");
 const linkCount = document.getElementById("allLinks");
 const totalClicks = document.getElementById("allClicks");
 const urlListBox = document.getElementById("urlListBox");
+const shrinkFormCustom = document.getElementById("shortenerInputCustom");
+const shrinkFullUrlCustom = document.getElementById("fullUrlCustom");
+const shrinkCustomUrl = document.getElementById("customUrl");
+const fullUrlBtnCustom = document.getElementById("fullUrlBtnCustom");
 let allurls = [];
 // const baseUrl = "http://localhost:8080"; // Your base URL
 const baseUrl = "https://urlshortenerbasic1.onrender.com"; // Your base URL
@@ -44,6 +48,47 @@ shrinkForm.addEventListener("submit", async (event) => {
   } catch (err) {
     console.log("Error while shrinking URL:", err);
     fullUrlBtn.innerHTML = "Shrink";
+  }
+});
+shrinkFormCustom.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  fullUrlBtnCustom.innerHTML = `<i class="fa fa-spinner fa-spin"></i>`;
+  const longUrlCustom = shrinkFullUrlCustom.value;
+  const customAlias = shrinkCustomUrl.value;
+
+  try {
+    const response = await fetch(`${baseUrl}/url/customShorten`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        url: longUrlCustom,
+        customUrl: customAlias,
+        id: userId,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to create custom alias.");
+    }
+
+    const result = await response.json();
+    console.log(result);
+    swal({
+      title: result.message,
+      text: "You can now access the short link in the Dashboard!",
+      icon: "success",
+      button: "Yay!🎉",
+    }).then((value) => {
+      if (value) {
+        fetchAllUrls();
+      }
+    });
+    fullUrlBtnCustom.innerHTML = "Shrink Custom";
+  } catch (err) {
+    console.log("Error while creating custom alias:", err);
+    fullUrlBtnCustom.innerHTML = "Shrink Custom";
   }
 });
 

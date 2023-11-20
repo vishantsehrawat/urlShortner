@@ -85,3 +85,24 @@ header {
 .urlItem {
   margin-bottom: 20px;
 }
+
+.fullUrlCustom {
+  width: calc(100% - 120px);
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.fullUrlBtnCustom {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.fullUrlBtnCustom:hover {
+  background-color: #444;
+}
