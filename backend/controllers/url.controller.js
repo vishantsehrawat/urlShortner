@@ -52,6 +52,13 @@ const redirectToOriginalUrl = async (req, res) => {
       });
     }
 
+    if (url.expiry && url.expiry < Date.now()) {
+      return res.status(404).json({
+        message: "Shortened URL has expired",
+        success: false,
+      });
+    }
+
     return res.redirect(url.longUrl);
   } catch (err) {
     console.error(err);
