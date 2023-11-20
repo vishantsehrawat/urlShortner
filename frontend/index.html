@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets\favico\blink-favicon.ico" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <!-- <link rel="shortcut icon" href="./images/chain.png" type="image/x-icon"> -->
+
+</head>
+
+<body>
+
+    <main>
+        <div class="mainOverview" id="mainOverview">
+            <div class="overviewCard" id="overviewCard1">
+                <p>All Urls</p>
+                <p>
+                    <strong id="allLinks">0</strong><span><img src="./images" alt="" /></span>
+                </p>
+            </div>
+            <div class="overviewCard" id="overviewCard2">
+                <p>Total Clicks</p>
+                <p>
+                    <strong id="allClicks">0</strong><span><img src="./images/" alt="" /></span>
+                </p>
+            </div>
+
+        </div>
+        <div class="mainShortenerBox" id="mainShortenerBox">
+            <form action="" class="shortenerInput" id="shortenerInput">
+                <input type="text" class="fullUrl" id="fullUrl" placeholder="Paste your longURL here" required />
+                <button type="submit" class="fullUrlBtn" id="fullUrlBtn">
+                    Shrink
+                </button>
+        </div>
+        <div class="urlListBox" id="urlListBox">
+
+        </div>
+
+        </div>
+
+    </main>
+
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>
