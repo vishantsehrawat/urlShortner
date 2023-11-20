@@ -5,7 +5,8 @@ const linkCount = document.getElementById("allLinks");
 const totalClicks = document.getElementById("allClicks");
 const urlListBox = document.getElementById("urlListBox");
 let allurls = [];
-const baseUrl = "http://localhost:8080"; // Your base URL
+// const baseUrl = "http://localhost:8080"; // Your base URL
+const baseUrl = "https://urlshortenerbasic.vercel.app"; // Your base URL
 
 let userId = localStorage.getItem("urlShortenerUser") || "defaultUserID";
 
@@ -36,7 +37,7 @@ shrinkForm.addEventListener("submit", async (event) => {
     }).then((value) => {
       if (value) {
         // displayAllUrls(allurls);
-        fetchAllUrls()
+        fetchAllUrls();
       }
     });
     fullUrlBtn.innerHTML = "Shrink";
@@ -71,7 +72,7 @@ function displayAllUrls(urls) {
 
     urlItem.appendChild(longUrlElement);
     urlItem.appendChild(space);
-    
+
     urlItem.appendChild(shortUrlElement);
     urlItem.appendChild(space);
     urlItem.appendChild(visitsElement);

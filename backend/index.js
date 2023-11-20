@@ -8,6 +8,13 @@ const { userRouter } = require("./routes/user.routes");
 const { urlRouter } = require("./routes/url.routes");
 const { logger } = require("./middlewares/winstonLogger");
 app.use(cors());
+app.use(
+  cors({
+    origin: "http://127.0.0.1:5501", // Specify the allowed origin
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Specify allowed HTTP methods
+    // credentials: true, // Allow credentials (if required)
+  })
+);
 app.use(express.json());
 app.use((req, res, next) => {
   // Pass the logger object to the request object
