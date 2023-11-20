@@ -66,3 +66,8 @@ Response
 ```
 # Screenshots:
 
+![image](https://github.com/vishantsehrawat/urlShortner/assets/51756111/4e2d9cd2-7fd8-4372-bb5b-55a229618632)
+![image](https://github.com/vishantsehrawat/urlShortner/assets/51756111/041a4823-33ca-46ac-a659-a1e18b0fcf86)
+![image](https://github.com/vishantsehrawat/urlShortner/assets/51756111/87d33aa9-0c4b-453c-bf9b-f9baa471f22e)
+
+
