@@ -30,4 +30,39 @@ Response
 }
 ```
 
-- `shortUrl` (string): The shortened URL.
+GET `/url/:shortenedPath`
+Redirects to the original url when, original url is provided
+Request Body
+
+```json
+{
+  "shortUrl": "string"
+}
+```
+
+Response
+
+```
+redirected to the original url
+```
+
+POST `/url/customShorten`
+Shortens a long URL and returns the custom shortened URL.
+
+Request Body
+
+```json
+{
+  "longUrl": "string"
+}
+```
+
+Response
+
+```json
+{
+  "shortUrl": "string"
+}
+```
+# Screenshots:
+
