@@ -104,4 +104,25 @@ const customShortenUrl = async (req, res) => {
   }
 };
 
-module.exports = { shortenUrl, redirectToOriginalUrl, customShortenUrl };
+//retrieve all shortened URLs
+const getAllShortenedUrls = async (req, res) => {
+  try {
+    const allUrls = await UrlModel.find({});
+    // console.log("🚀 ~ file: url.controller.js:111 ~ getAllShortenedUrls ~ allUrls:", allUrls)
+    return res
+      .status(200)
+      .json({ urls: allUrls, success: true, message: "Retrieved all URLs" });
+  } catch (err) {
+    console.error(err);
+    return res
+      .status(500)
+      .json({ message: "Internal server error", success: false });
+  }
+};
+
+module.exports = {
+  shortenUrl,
+  redirectToOriginalUrl,
+  customShortenUrl,
+  getAllShortenedUrls,
+};

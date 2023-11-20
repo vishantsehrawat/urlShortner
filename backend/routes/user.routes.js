@@ -13,7 +13,7 @@ require("dotenv").config();
 
 userRouter.post("/login", userLogin);
 
-userRouter.post("/logout", userLogout);
+userRouter.post("/logout", authMiddleware, userLogout);
 
 userRouter.post("/register", registerUser);
 
