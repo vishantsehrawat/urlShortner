@@ -13,7 +13,7 @@ const urlSchema = new mongoose.Schema(
     visits: { type: Number, required: true, default: 0 },
     createdAt: { type: Date, default: Date.now },
     // expiry: { type: Date, default: Date.now, expires: 10 }, // 24 hours =  (86400 seconds) //^ we can also ask the user for specfic date of expiration
-    expiry: { type: Date, default: Date.now() + 60 * 60 * 1000 }, // Expiry set to 1 hours from creation
+    expiry: { type: Date, default: Date.now() + 7* 24* 60 * 60 * 1000 }, // Expiry set to 1 hours from creation
     // expiry: { type: Date, default: Date.now, expires: "60s" }, // Set expiration to 10 seconds
     // expiry: { type: Date, default: Date.now, expires: "60s" },
   },
